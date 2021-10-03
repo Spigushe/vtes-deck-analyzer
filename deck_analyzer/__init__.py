@@ -7,6 +7,7 @@ import shutil
 
 from .deck import Deck
 from .plots.crypt_curve import crypt_curve
+from .plots.crypt_disc import crypt_disc
 
 
 def main():
@@ -28,6 +29,9 @@ def main():
         # Graphics generators
         crypt_curve(deck, dir_name)
         logging.info("Crypt curve generated")
+        crypt_disc(deck, dir_name)
+        logging.info("Discipline curve generated")
+
         # Delete the temp dir
         try:
             shutil.rmtree(dir_name)
