@@ -1,0 +1,8 @@
+include LICENSE README.md CHANGELOG.rst
+
+graft deck_analyzer
+prune tests
+exclude Makefile
+
+global-exclude */__pycache__/*
+global-exclude *.egg-info/*
