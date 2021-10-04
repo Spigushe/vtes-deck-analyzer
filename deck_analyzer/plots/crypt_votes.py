@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import os
 import matplotlib.pyplot as plt  # https://matplotlib.org/stable/index.html
-import numpy as np
 from krcg import vtes
 from ..deck import Deck
 
@@ -22,10 +21,7 @@ def get_votes(title: str) -> int:
         "1 vote": 1,
         "2 votes": 2,
     }
-    try:
-        return votes[title]
-    except:
-        return 0
+    return votes.get(title, 0)
 
 
 def crypt_votes(deck: Deck, path):
