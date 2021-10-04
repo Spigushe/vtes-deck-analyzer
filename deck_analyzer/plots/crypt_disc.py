@@ -33,7 +33,7 @@ def get_disc(d: str, dir_name: str):
     # File address
     path = os.path.join(dir_name, d.lower() + ".png")
     # Download discipline
-    url = "https://static.krcg.org/png/disc/sup/{}.png".format(d.lower())
+    url = "https://static.krcg.org/png/disc/inf/{}.png".format(d.lower())
     response = requests.get(url, stream=True)
     with open(path, "wb") as out_file:
         shutil.copyfileobj(response.raw, out_file)
