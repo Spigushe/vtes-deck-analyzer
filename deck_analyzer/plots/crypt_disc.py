@@ -45,7 +45,7 @@ def get_disc(d: str, dir_name: str):
 
 def offset_image(coord, name, ax, dir_name):
     img = get_disc(name, dir_name)
-    im = OffsetImage(img, zoom=0.025)
+    im = OffsetImage(img, zoom=0.018)
     im.image.axes = ax
 
     ab = AnnotationBbox(
