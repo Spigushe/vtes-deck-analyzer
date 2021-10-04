@@ -27,6 +27,7 @@ def get_votes(title: str) -> int:
     except:
         return 0
 
+
 def crypt_votes(deck: Deck, path):
     if not vtes.VTES:
         vtes.VTES.load()
@@ -34,7 +35,7 @@ def crypt_votes(deck: Deck, path):
     # X-axis
     x = ["0 Vote", "1 Vote", "2 Votes", "3 Votes", "4 Votes"]
     # Y-axis
-    y = [0,0,0,0,0]
+    y = [0, 0, 0, 0, 0]
 
     for item in deck.get_crypt():
         for key in item.keys():
