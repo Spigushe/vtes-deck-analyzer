@@ -18,10 +18,10 @@ def sort_disc(table: dict) -> dict:
         temp.append((key, table[key]["tot"], table[key]["sup"], table[key]["inf"]))
     # Default sorting: alphabetically
     temp = sorted(temp, key=lambda t: t[0])
-    # Secondary sorting: quantity of superior DESC
-    temp = sorted(temp, key=lambda t: t[2], reverse=True)
     # Primary sorting: quantity of total DESC
     temp = sorted(temp, key=lambda t: t[1], reverse=True)
+    # Secondary sorting: quantity of superior DESC
+    temp = sorted(temp, key=lambda t: t[2], reverse=True)
     return temp
 
 
