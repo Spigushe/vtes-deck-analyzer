@@ -36,6 +36,8 @@ def main():
         logging.info("Vote curve generated")
         library_types(deck, dir_name)
         logging.info("Types curve generated")
+        library_costs(deck, dir_name)
+        logging.info("Costs curve generated")
 
         # Delete the temp dir
         try:
