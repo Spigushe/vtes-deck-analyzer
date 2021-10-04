@@ -9,6 +9,7 @@ from .plots.crypt_curve import crypt_curve
 from .plots.crypt_disc import crypt_disc
 from .plots.crypt_votes import crypt_votes
 from .plots.library_types import library_types
+from .plots.library_costs import library_costs
 
 
 def main():
