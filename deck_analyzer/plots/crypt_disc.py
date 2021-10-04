@@ -19,7 +19,14 @@ def check_level(discipline: str) -> str:
 def sort_disc(table: dict) -> dict:
     temp = []
     for key in table.keys():
-        temp.append((key, table[key]["tot"], table[key]["sup"], table[key]["inf"]))
+        temp.append(
+            (
+                key,
+                table[key]["sup"] + table[key]["inf"],
+                table[key]["sup"],
+                table[key]["inf"],
+            )
+        )
     # Default sorting: alphabetically
     temp = sorted(temp, key=lambda t: t[0])
     # Primary sorting: quantity of total DESC
@@ -73,10 +80,8 @@ def crypt_disc(deck: Deck, path):
                     disc[d.lower()] = {
                         "inf": 0,
                         "sup": 0,
-                        "tot": 0,
                     }
                 disc[d.lower()][check_level(d)] += item[key]
-                disc[d.lower()]["tot"] += item[key]
     keys = sort_disc(disc)
 
     inf, sup = [], []
