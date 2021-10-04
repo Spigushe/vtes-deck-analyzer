@@ -29,10 +29,10 @@ def sort_disc(table: dict) -> dict:
         )
     # Default sorting: alphabetically
     temp = sorted(temp, key=lambda t: t[0])
-    # Primary sorting: quantity of total DESC
-    temp = sorted(temp, key=lambda t: t[1], reverse=True)
-    # Secondary sorting: quantity of superior DESC
+    # Secondary sorting: quantity of sup DESC
     temp = sorted(temp, key=lambda t: t[2], reverse=True)
+    # Primary sorting: quantity of tot DESC
+    temp = sorted(temp, key=lambda t: t[1], reverse=True)
     return temp
 
 
