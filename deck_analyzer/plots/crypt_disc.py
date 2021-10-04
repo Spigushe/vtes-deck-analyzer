@@ -62,3 +62,6 @@ def crypt_disc(deck: Deck, path):
 
     plt.savefig(os.path.join(path, "crypt_disc.pdf"))
     plt.savefig(os.path.join(path, "crypt_disc.svg"))
+
+    plt.clf()
+    plt.cla()

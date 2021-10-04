@@ -22,3 +22,6 @@ def crypt_curve(deck: Deck, path):
 
     plt.savefig(os.path.join(path, "crypt_curve.pdf"))
     plt.savefig(os.path.join(path, "crypt_curve.svg"))
+
+    plt.clf()
+    plt.cla()
