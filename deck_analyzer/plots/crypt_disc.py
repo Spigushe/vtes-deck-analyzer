@@ -87,18 +87,19 @@ def crypt_disc(deck: Deck, path):
     inf, sup = [], []
     labels = []
     for k in keys:
-        inf.append(disc[k[0]]["inf"] * -1)
+        inf.append(disc[k[0]]["inf"] + disc[k[0]]["sup"])
         sup.append(disc[k[0]]["sup"])
         labels.append(k[0].upper())
 
     fig, ax = plt.subplots()
-    sup = ax.bar(range(len(labels)), sup, width=0.8, label="Superior")
-    inf = ax.bar(range(len(labels)), inf, width=0.8, label="Inferior")
+    inf = ax.bar(range(len(labels)), inf, width=0.8, label="Inferior", color="C1")
+    sup = ax.bar(range(len(labels)), sup, width=0.8, label="Superior", color="C0")
     ax.axhline(0, color="grey", linewidth=0.8)
 
     ax.set_xticks(range(len(labels)))
     ax.set_xticklabels(labels)
-    ax.tick_params(axis="x", which="major")
+    ax.tick_params(axis="x", which="major", pad=26)
+    ax.legend()
 
     for i, c in enumerate(labels):
         offset_image(i, c, ax, path)
