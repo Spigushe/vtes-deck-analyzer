@@ -9,7 +9,6 @@ from .plots.crypt_curve import crypt_curve
 from .plots.crypt_disc import crypt_disc
 from .plots.crypt_votes import crypt_votes
 from .plots.library_types import library_types
-from .plots.library_costs import library_costs
 
 
 def main():
@@ -37,8 +36,6 @@ def main():
         logging.info("Vote curve generated")
         library_types(deck, dir_name)
         logging.info("Types curve generated")
-        library_costs(deck, dir_name)
-        logging.info("Costs curve generated")
 
         # Delete the temp dir
         try:
