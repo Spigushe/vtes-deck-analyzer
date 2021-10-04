@@ -18,7 +18,7 @@ def crypt_curve(deck: Deck, path):
         for key in item.keys():
             y[vtes.VTES[key].capacity - 1] = y[vtes.VTES[key].capacity - 1] + item[key]
 
-    plt.bar(x, y, tick_label=x, width=0.8, color=["red", "green"])
+    plt.bar(x, y, tick_label=x, width=0.8)
 
     plt.savefig(os.path.join(path, "crypt_curve.pdf"))
     plt.savefig(os.path.join(path, "crypt_curve.svg"))
