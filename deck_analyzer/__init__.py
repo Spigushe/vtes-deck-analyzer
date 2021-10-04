@@ -2,7 +2,6 @@
 import os
 import sys
 import logging
-import shutil
 
 
 from .deck import Deck
