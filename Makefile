@@ -1,4 +1,4 @@
-.PHONY: quality test release update serve clean
+.PHONY: quality release update serve clean
 
 quality:
 	black --check .
@@ -9,6 +9,7 @@ release:
 	pip install -e ".[dev]"
 
 update:
+	pip install --upgrade pip
 	pip install --upgrade --upgrade-strategy eager -e ".[dev]"
 
 clean:
