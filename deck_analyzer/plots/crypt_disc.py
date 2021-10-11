@@ -68,10 +68,7 @@ def offset_image(coord, name, ax, dir_name):
     ax.add_artist(ab)
 
 
-def crypt_disc(deck: Deck, path):
-    if not vtes.VTES:
-        vtes.VTES.load()
-
+def crypt_disc_plot(deck: Deck, path: str):
     disc = {}
     for item in deck.get_crypt():
         for d in vtes.VTES[item["name"]].disciplines:
@@ -109,3 +106,11 @@ def crypt_disc(deck: Deck, path):
 
     plt.clf()
     plt.cla()
+
+
+def crypt_disc(deck: Deck, path: str):
+    if not vtes.VTES:
+        vtes.VTES.load()
+
+    # Generating plots
+    crypt_disc_plot(deck, path)

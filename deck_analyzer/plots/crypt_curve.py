@@ -5,10 +5,7 @@ from krcg import vtes
 from ..deck import Deck
 
 
-def crypt_curve(deck: Deck, path):
-    if not vtes.VTES:
-        vtes.VTES.load()
-
+def crypt_curve_plot(deck: Deck, path: str):
     # X-axis
     x = range(1, 11 + 1)
     # Y-axis
@@ -27,3 +24,11 @@ def crypt_curve(deck: Deck, path):
 
     plt.clf()
     plt.cla()
+
+
+def crypt_curve(deck: Deck, path: str):
+    if not vtes.VTES:
+        vtes.VTES.load()
+
+    # Generating plots
+    crypt_curve_plot(deck, path)

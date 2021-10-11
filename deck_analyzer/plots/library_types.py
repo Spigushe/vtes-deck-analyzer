@@ -5,10 +5,7 @@ from krcg import vtes
 from ..deck import Deck
 
 
-def library_types(deck: Deck, path: str):
-    if not vtes.VTES:
-        vtes.VTES.load()
-
+def library_types_plot(deck: Deck, path: str):
     types = {}
     for item in deck.get_library():
         for t in vtes.VTES[item["name"]].types:
@@ -27,3 +24,10 @@ def library_types(deck: Deck, path: str):
 
     plt.clf()
     plt.cla()
+
+def library_types(deck: Deck, path:str):
+        if not vtes.VTES:
+            vtes.VTES.load()
+
+        # Generating plots
+        library_types_plot(deck, path)

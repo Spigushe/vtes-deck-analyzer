@@ -23,11 +23,7 @@ def get_votes(title: str) -> int:
     }
     return votes.get(title, 0)
 
-
-def crypt_votes(deck: Deck, path):
-    if not vtes.VTES:
-        vtes.VTES.load()
-
+def crypt_vote_plot(deck: Deck, path: str):
     # X-axis
     x = ["0 Vote", "1 Vote", "2 Votes", "3 Votes", "4 Votes"]
     # Y-axis
@@ -44,3 +40,10 @@ def crypt_votes(deck: Deck, path):
 
     plt.clf()
     plt.cla()
+
+def crypt_votes(deck: Deck, path):
+    if not vtes.VTES:
+        vtes.VTES.load()
+
+    # Generating plots
+    crypt_vote_plot(deck, path)
