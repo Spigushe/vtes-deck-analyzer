@@ -38,6 +38,7 @@ def crypt_votes(deck: Deck, path):
 
     plt.bar(x, y, tick_label=x, width=0.8)
 
+    plt.title("Availability of votes in crypt")
     plt.savefig(os.path.join(path, "crypt_votes.pdf"))
     plt.savefig(os.path.join(path, "crypt_votes.svg"))
 
