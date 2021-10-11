@@ -11,11 +11,10 @@ def library_types(deck: Deck, path: str):
 
     types = {}
     for item in deck.get_library():
-        for key in item.keys():
-            for t in vtes.VTES[key].types:
-                if t not in types.keys():
-                    types[t] = 0
-                types[t] += item[key]
+        for t in vtes.VTES[item["name"]].types:
+            if t not in types.keys():
+                types[t] = 0
+            types[t] += item["count"]
 
     fig, ax = plt.subplots()
     labels = [str(k) + " (" + str(v) + ")" for k, v in types.items()]
