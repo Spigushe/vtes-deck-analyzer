@@ -33,9 +33,9 @@ class Deck:
         for line in self.deck:
             count, name = self.get_card(line)
             if "Vampire" in vtes.VTES[name].types:
-                self.crypt.append({name: count})
+                self.crypt.append({"name": name, "count": count})
             else:
-                self.library.append({name: count})
+                self.library.append({"name": name, "count": count})
 
     def get_card(line: str) -> Tuple[int, str]:
         name, count = "", ""
