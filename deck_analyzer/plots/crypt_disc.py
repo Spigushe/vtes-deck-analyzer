@@ -103,6 +103,7 @@ def crypt_disc(deck: Deck, path):
     for i, c in enumerate(labels):
         offset_image(i, c, ax, path)
 
+    plt.title("Available dicsiplines in crypt")
     plt.savefig(os.path.join(path, "crypt_disc.pdf"))
     plt.savefig(os.path.join(path, "crypt_disc.svg"))
 
