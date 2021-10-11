@@ -2,6 +2,7 @@
 import os
 import sys
 import logging
+import shutil
 
 
 from .deck import Deck
@@ -40,8 +41,9 @@ def main():
         # Delete the temp dir
         try:
             shutil.rmtree(dir_name)
+            logging.info("Directory removed")
         except OSError as e:
-            print("Error: %s - %s." % (e.filename, e.strerror))
+            logging.error("Error: %s - %s." % (e.filename, e.strerror))
 
     else:
         logging.error("File does not exists: " + os.path.basename(fn))
