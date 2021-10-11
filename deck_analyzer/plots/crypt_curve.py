@@ -21,6 +21,7 @@ def crypt_curve(deck: Deck, path):
 
     plt.bar(x, y, tick_label=x, width=0.8, color="C0")
 
+    plt.title("Crypt by capacity")
     plt.savefig(os.path.join(path, "crypt_curve.pdf"))
     plt.savefig(os.path.join(path, "crypt_curve.svg"))
 
