@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import os
 import matplotlib.pyplot as plt  # https://matplotlib.org/stable/index.html
-from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+from krcg import vtes
+from ..deck import Deck
 
 # https://stackoverflow.com/questions/44246650/add-image-annotations-to-bar-plots/44264051#44264051
 import shutil
 import requests
-from krcg import vtes
-from ..deck import Deck
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
 
 def check_level(discipline: str) -> str:
