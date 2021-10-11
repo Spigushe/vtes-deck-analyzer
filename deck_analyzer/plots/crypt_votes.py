@@ -34,8 +34,7 @@ def crypt_votes(deck: Deck, path):
     y = [0, 0, 0, 0, 0]
 
     for item in deck.get_crypt():
-        for key in item.keys():
-            y[get_votes(vtes.VTES[key].title)] += item[key]
+        y[get_votes(vtes.VTES[item["name"]].title)] += item["count"]
 
     plt.bar(x, y, tick_label=x, width=0.8)
 
