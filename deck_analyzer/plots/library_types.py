@@ -21,6 +21,7 @@ def library_types(deck: Deck, path: str):
     values = [v for k, v in types.items()]
     ax.pie(values, labels=labels, startangle=90)
 
+    plt.title("Share of types in minion cards")
     plt.savefig(os.path.join(path, "library_types.pdf"))
     plt.savefig(os.path.join(path, "library_types.svg"))
 
