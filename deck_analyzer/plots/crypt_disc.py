@@ -74,14 +74,13 @@ def crypt_disc(deck: Deck, path):
 
     disc = {}
     for item in deck.get_crypt():
-        for key in item.keys():
-            for d in vtes.VTES[key].disciplines:
-                if d.lower() not in disc.keys():
-                    disc[d.lower()] = {
-                        "inf": 0,
-                        "sup": 0,
-                    }
-                disc[d.lower()][check_level(d)] += item[key]
+        for d in vtes.VTES[item["name"]].disciplines:
+            if d.lower() not in disc.keys():
+                disc[d.lower()] = {
+                    "inf": 0,
+                    "sup": 0,
+                }
+            disc[d.lower()][check_level(d)] += item["count"]
     keys = sort_disc(disc)
 
     inf, sup = [], []
